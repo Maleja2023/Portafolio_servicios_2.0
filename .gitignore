@@ -9,7 +9,18 @@ out/
 
 # build / debug
 *.tsbuildinfo
-next-env.d.ts
+.turbo
+.cache
+
+# tests / coverage
+coverage
+.nyc_output
+
+# misc
+*.pem
+*.log
+*.tmp
+*.temp
 
 # env (no subir secretos)
 .env
@@ -21,6 +32,8 @@ next-env.d.ts
 *.swp
 .DS_Store
 Thumbs.db
+.cursor/
+*:Zone.Identifier
 
 # logs
 npm-debug.log*
