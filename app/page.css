@@ -1,0 +1,15 @@
+/* Estilos específicos de la página de inicio */
+.home-page-shell {
+  position: relative;
+}
+
+.home-page-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -10%, rgba(212, 168, 83, 0.14), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(125, 42, 43, 0.35), transparent 70%);
+}

@@ -1,0 +1,13 @@
+/* Estilos específicos del listado de Servicios */
+.servicios-page-shell {
+  position: relative;
+}
+
+.servicios-page-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 90% 55% at 80% 10%, rgba(212, 168, 83, 0.1), transparent 52%);
+}

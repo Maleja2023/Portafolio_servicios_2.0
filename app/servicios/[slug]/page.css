@@ -1,0 +1,13 @@
+/* Estilos específicos del detalle de un servicio */
+.servicio-detalle-shell {
+  position: relative;
+}
+
+.servicio-detalle-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 85% 50% at 50% 0%, rgba(212, 168, 83, 0.08), transparent 48%);
+}

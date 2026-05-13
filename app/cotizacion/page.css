@@ -1,0 +1,13 @@
+/* Estilos específicos de Cotización */
+.cotizacion-page-shell {
+  position: relative;
+}
+
+.cotizacion-page-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 95% 55% at 15% 30%, rgba(212, 168, 83, 0.1), transparent 50%);
+}

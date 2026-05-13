@@ -1,0 +1,13 @@
+/* Estilos específicos de Nosotros */
+.nosotros-page-shell {
+  position: relative;
+}
+
+.nosotros-page-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 100% 60% at 20% 0%, rgba(212, 168, 83, 0.12), transparent 50%);
+}

@@ -1,0 +1,13 @@
+/* Estilos específicos de Contacto */
+.contacto-page-shell {
+  position: relative;
+}
+
+.contacto-page-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 100% 50% at 50% 20%, rgba(212, 168, 83, 0.11), transparent 55%);
+}

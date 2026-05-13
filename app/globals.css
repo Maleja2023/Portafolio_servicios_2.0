@@ -1,0 +1,397 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Casa de Eventos Laura Sofía - Marrón rojizo, blanco y dorado */
+  --background: #5C1A1B;
+  --foreground: #FFFEF7;
+  --card: rgba(92, 26, 27, 0.9);
+  --card-foreground: #FFFEF7;
+  --popover: #5C1A1B;
+  --popover-foreground: #FFFEF7;
+  --primary: #D4A853;
+  --primary-foreground: #5C1A1B;
+  --secondary: #7D2A2B;
+  --secondary-foreground: #FFFEF7;
+  --muted: #4A1516;
+  --muted-foreground: #C9B896;
+  --accent: #D4A853;
+  --accent-foreground: #5C1A1B;
+  --destructive: #ff4444;
+  --destructive-foreground: #FFFEF7;
+  --border: rgba(212, 168, 83, 0.3);
+  --input: rgba(212, 168, 83, 0.2);
+  --ring: #D4A853;
+  --chart-1: #D4A853;
+  --chart-2: #7D2A2B;
+  --chart-3: #FFFEF7;
+  --chart-4: #C9B896;
+  --chart-5: #5C1A1B;
+  --radius: 0.625rem;
+  --sidebar: #5C1A1B;
+  --sidebar-foreground: #FFFEF7;
+  --sidebar-primary: #D4A853;
+  --sidebar-primary-foreground: #5C1A1B;
+  --sidebar-accent: rgba(212, 168, 83, 0.2);
+  --sidebar-accent-foreground: #FFFEF7;
+  --sidebar-border: rgba(212, 168, 83, 0.3);
+  --sidebar-ring: #D4A853;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', 'Playfair Display Fallback', ui-serif, Georgia, serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(212, 168, 83, 0.3),
+                0 0 40px rgba(212, 168, 83, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(212, 168, 83, 0.5),
+                0 0 60px rgba(212, 168, 83, 0.2);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+@keyframes sparkle-float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes border-glow {
+  0%, 100% { 
+    border-color: rgba(212, 168, 83, 0.3);
+  }
+  50% { 
+    border-color: rgba(212, 168, 83, 0.8);
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(212, 168, 83, 0.5),
+                 0 0 20px rgba(212, 168, 83, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(212, 168, 83, 0.8),
+                 0 0 40px rgba(212, 168, 83, 0.5);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 168, 83, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-border-glow {
+  animation: border-glow 2s ease-in-out infinite;
+}
+
+.animate-text-glow {
+  animation: text-glow 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+}
+
+.animate-star-twinkle {
+  animation: star-twinkle 2s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+/* Delays para animaciones escalonadas */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* Efectos de hover personalizados */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+              0 0 30px rgba(212, 168, 83, 0.3);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(92, 26, 27, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 168, 83, 0.2);
+}
+
+.glass-light {
+  background: rgba(255, 254, 247, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 168, 83, 0.3);
+}
+
+/* Gradiente dorado para textos */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #D4A853 0%, #F5D78E 50%, #D4A853 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Borde dorado animado */
+.border-glow-gold {
+  position: relative;
+}
+
+.border-glow-gold::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #D4A853, #F5D78E, #D4A853, #C9B896);
+  background-size: 300% 300%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: gradient-shift 4s ease infinite;
+  opacity: 0.7;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #4A1516;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4A853, #C9B896);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #F5D78E, #D4A853);
+}
+
+/* Efecto de partículas doradas */
+.golden-particles {
+  position: relative;
+  overflow: hidden;
+}
+
+.golden-particles::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #D4A853, transparent),
+    radial-gradient(2px 2px at 40px 70px, #F5D78E, transparent),
+    radial-gradient(1px 1px at 90px 40px, #D4A853, transparent),
+    radial-gradient(2px 2px at 130px 80px, #C9B896, transparent),
+    radial-gradient(1px 1px at 160px 20px, #F5D78E, transparent);
+  background-size: 200px 100px;
+  animation: sparkle-float 10s linear infinite;
+  pointer-events: none;
+  opacity: 0.6;
+}
