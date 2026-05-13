@@ -32,7 +32,6 @@ coverage
 *.swp
 .DS_Store
 Thumbs.db
-.cursor/
 *:Zone.Identifier
 
 # logs
